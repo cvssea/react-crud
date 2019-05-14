@@ -16,13 +16,7 @@ class EditContact extends Component {
     const [contact] = contacts.filter(({ id }) => {
       return id === Number(this.props.match.params.id);
     });
-    const { id, name, email, phone } = contact;
-    this.setState({
-      id,
-      name,
-      email,
-      phone,
-    });
+    this.setState({ ...contact });
   }
 
   handleChange = (e) => {
